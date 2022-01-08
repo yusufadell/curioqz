@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=quiz
+POSTGRES_USER=zHOQjbtmZastYSnwQMuGxTGphuavVMjy
+POSTGRES_PASSWORD=YJIltL9elwXmUpYo8P9V7HtXidaBtjOow3BtXOPSmbvU7aYYIfpsBM4OUspKxcwS
