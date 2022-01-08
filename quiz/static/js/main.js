@@ -1,4 +1,4 @@
-console.log('hello world')
+console.log('Exam Started....!')
 
 const modalBtns = [...document.getElementsByClassName('modal-button')]
 const modalBody = document.getElementById('modal-body-confirm')

@@ -10,6 +10,7 @@ from .models import Quiz
 
 class QuizListView(ListView):
     model = Quiz
+    context_object_name = "quizzes"
     template_name = "quizzes/main.html"
 
 
