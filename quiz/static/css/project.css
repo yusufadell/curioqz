@@ -1,5 +1,57 @@
 /* These styles are generated from project.scss. */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  line-height: 1;
+  -webkit-text-size-adjust: none;
+  min-width: 320px;
+  min-height: 100vh;
+  word-wrap: break-word;
+  overflow-x: hidden;
 
+}
+
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  transform: scale(1);
+  background-attachment: scroll;
+  background-image: linear-gradient(
+    to top,
+    rgba(21, 20, 28, 0.871),
+    rgba(21, 20, 28, 0.871)
+  ),
+  url("../images/landing/bg.svg");
+  background-position: 0% 0%, center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-color: #15141c;
+}
+body:after {
+  display: block;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #15141c;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out 0s, visibility 1s 0s;
+  transform: scale(1);
+}
 .alert-debug {
   color: black;
   background-color: white;
