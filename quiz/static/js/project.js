@@ -1,4 +1,3 @@
-
 const modalBtns = [...document.getElementsByClassName('modal-button')]
 const modalBody = document.getElementById('modal-body-confirm')
 const startBtn = document.getElementById('start-button')
@@ -88,14 +87,14 @@ $.ajax({
         data.forEach(el => {
             for (const [question, answers] of Object.entries(el)) {
                 quizBox.innerHTML += `
-                    <hr>
+
                     <div class="mb-2">
                         <b>${question}</b>
                     </div>
                 `
                 answers.forEach(answer => {
                     quizBox.innerHTML += `
-                        <div>
+                        <div class="answer-radio">
                             <input type="radio" class="ans" id="${question}-${answer}" name="${question}" value="${answer}">
                             <label for="${question}">${answer}</label>
                         </div>
