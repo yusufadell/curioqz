@@ -1612,7 +1612,7 @@ body.is-touch #container01 {
     rgba(250, 144, 72, 0.949) 0%,
     rgba(255, 84, 115, 0.922) 100%
   ),
-  url("../images/container02");
+  url("../images/landing/container02.svg");
   background-position: 0% 0%, center;
   background-repeat: repeat, no-repeat;
   background-size: cover, cover;
