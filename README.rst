@@ -15,9 +15,11 @@ Behold My Awesome Project!
 Project Preview
 ===============
 
-![Langing Page](./assets/preview.png)
+.. image:: /assets/landing.png
+    :alt: Landing Page!
 
-![students and Professor Login...](./assets/users.png)
+.. image:: /assets/users.png
+    :alt: Students and Professor Sign in!
 
 
 Settings
