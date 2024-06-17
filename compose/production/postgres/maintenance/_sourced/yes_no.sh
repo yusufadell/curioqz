@@ -6,7 +6,7 @@ yes_no() {
     local arg1="${1}"
 
     local response=
-    read -r -p "${arg1} (y/[n])? " response
+    read -r -p "$arg1 (y/[n])? " response
     if [[ "${response}" =~ ^[Yy]$ ]]
     then
         exit 0
