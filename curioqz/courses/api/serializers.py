@@ -1,6 +1,9 @@
 from rest_framework import serializers
 
-from ..models import Content, Course, Module, Subject
+from ..models import Content
+from ..models import Course
+from ..models import Module
+from ..models import Subject
 
 
 class SubjectSerializer(serializers.ModelSerializer):

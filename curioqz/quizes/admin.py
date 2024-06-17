@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from .models import Attempt, Grade, Quiz, QuizGrade, QuizQuestion, Review
+from .models import Attempt
+from .models import Grade
+from .models import Quiz
+from .models import QuizGrade
+from .models import QuizQuestion
+from .models import Review
 
 
 @admin.register(Quiz)

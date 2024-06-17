@@ -1,7 +1,6 @@
 """
 Base settings to build other settings files upon.
 """
-
 from pathlib import Path
 
 import environ

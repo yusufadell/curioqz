@@ -1,17 +1,17 @@
-from rest_framework import mixins, viewsets
+from rest_framework import mixins
+from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.decorators import action
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from ..models import Course, Subject
+from ..models import Course
+from ..models import Subject
 from .permissions import IsEnrolled
-from .serializers import (
-    CourseSerializer,
-    CourseWithContentsSerializer,
-    SubjectSerializer,
-)
+from .serializers import CourseSerializer
+from .serializers import CourseWithContentsSerializer
+from .serializers import SubjectSerializer
 
 
 class SubjectViewSet(

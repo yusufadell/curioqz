@@ -4,7 +4,8 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from curioqz.quizes.managers import QuizManager, QuizQuestionsManager
+from curioqz.quizes.managers import QuizManager
+from curioqz.quizes.managers import QuizQuestionsManager
 from curioqz.quizes.models_mixins import QuizMixin
 
 User = get_user_model()

@@ -1,5 +1,6 @@
 from django.conf import settings
-from rest_framework.routers import DefaultRouter, SimpleRouter
+from rest_framework.routers import DefaultRouter
+from rest_framework.routers import SimpleRouter
 
 from curioqz.users.api.views import UserViewSet
 

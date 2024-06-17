@@ -1,14 +1,19 @@
 import pysnooper
-from rest_framework import generics, mixins, viewsets
+from rest_framework import generics
+from rest_framework import mixins
+from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from curioqz.quizes.api.serializers import (
-    QuizGradeSerializer,
-    QuizQuestionSerializer,
-    QuizSerializer,
-)
-from curioqz.quizes.models import Attempt, Grade, Quiz, QuizGrade, QuizQuestion, Review
+from curioqz.quizes.api.serializers import QuizGradeSerializer
+from curioqz.quizes.api.serializers import QuizQuestionSerializer
+from curioqz.quizes.api.serializers import QuizSerializer
+from curioqz.quizes.models import Attempt
+from curioqz.quizes.models import Grade
+from curioqz.quizes.models import Quiz
+from curioqz.quizes.models import QuizGrade
+from curioqz.quizes.models import QuizQuestion
+from curioqz.quizes.models import Review
 
 
 @pysnooper.snoop()

@@ -4,14 +4,17 @@ from django.contrib import messages
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.messages.middleware import MessageMiddleware
 from django.contrib.sessions.middleware import SessionMiddleware
-from django.http import HttpRequest, HttpResponseRedirect
+from django.http import HttpRequest
+from django.http import HttpResponseRedirect
 from django.test import RequestFactory
 from django.urls import reverse
 
 from curioqz.users.forms import UserAdminChangeForm
 from curioqz.users.models import User
 from curioqz.users.tests.factories import UserFactory
-from curioqz.users.views import UserRedirectView, UserUpdateView, user_detail_view
+from curioqz.users.views import user_detail_view
+from curioqz.users.views import UserRedirectView
+from curioqz.users.views import UserUpdateView
 
 pytestmark = pytest.mark.django_db
 

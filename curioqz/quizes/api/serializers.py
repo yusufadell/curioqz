@@ -3,7 +3,12 @@ from rest_framework import serializers
 
 from curioqz.courses.api.serializers import CourseSerializer
 from curioqz.questions.api.serializers import QuestionSerializer
-from curioqz.quizes.models import Attempt, Grade, Quiz, QuizGrade, QuizQuestion, Review
+from curioqz.quizes.models import Attempt
+from curioqz.quizes.models import Grade
+from curioqz.quizes.models import Quiz
+from curioqz.quizes.models import QuizGrade
+from curioqz.quizes.models import QuizQuestion
+from curioqz.quizes.models import Review
 
 User = get_user_model()
 
