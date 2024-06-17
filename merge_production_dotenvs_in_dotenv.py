@@ -15,6 +15,12 @@ def merge(
     output_file: Path,
     files_to_merge: Sequence[Path],
 ) -> None:
+    """
+
+    :param output_file: Path:
+    :param files_to_merge: Sequence[Path]:
+
+    """
     merged_content = ""
     for merge_file in files_to_merge:
         merged_content += merge_file.read_text()

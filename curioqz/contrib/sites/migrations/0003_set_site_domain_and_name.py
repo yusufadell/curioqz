@@ -8,7 +8,14 @@ from django.db import migrations
 
 
 def _update_or_create_site_with_sequence(site_model, connection, domain, name):
-    """Update or create the site with default ID and keep the DB sequence in sync."""
+    """Update or create the site with default ID and keep the DB sequence in sync.
+
+    :param site_model:
+    :param connection:
+    :param domain:
+    :param name:
+
+    """
     site, created = site_model.objects.update_or_create(
         id=settings.SITE_ID,
         defaults={
@@ -26,7 +33,7 @@ def _update_or_create_site_with_sequence(site_model, connection, domain, name):
         max_id = site_model.objects.order_by("-id").first().id
         with connection.cursor() as cursor:
             cursor.execute("SELECT last_value from django_site_id_seq")
-            (current_id,) = cursor.fetchone()
+            (current_id, ) = cursor.fetchone()
             if current_id <= max_id:
                 cursor.execute(
                     "alter sequence django_site_id_seq restart with %s",
@@ -35,7 +42,12 @@ def _update_or_create_site_with_sequence(site_model, connection, domain, name):
 
 
 def update_site_forward(apps, schema_editor):
-    """Set site domain and name."""
+    """Set site domain and name.
+
+    :param apps:
+    :param schema_editor:
+
+    """
     Site = apps.get_model("sites", "Site")
     _update_or_create_site_with_sequence(
         Site,
@@ -46,7 +58,12 @@ def update_site_forward(apps, schema_editor):
 
 
 def update_site_backward(apps, schema_editor):
-    """Revert site domain and name to default."""
+    """Revert site domain and name to default.
+
+    :param apps:
+    :param schema_editor:
+
+    """
     Site = apps.get_model("sites", "Site")
     _update_or_create_site_with_sequence(
         Site,
@@ -57,6 +74,9 @@ def update_site_backward(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
+    """ """
     dependencies = [("sites", "0002_alter_domain_unique")]
 
-    operations = [migrations.RunPython(update_site_forward, update_site_backward)]
+    operations = [
+        migrations.RunPython(update_site_forward, update_site_backward)
+    ]

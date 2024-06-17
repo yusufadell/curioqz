@@ -4,14 +4,18 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from curioqz.quizes.managers import QuizManager, QuizQuestionsManager
+from curioqz.quizes.managers import QuizManager
+from curioqz.quizes.managers import QuizQuestionsManager
 from curioqz.quizes.models_mixins import QuizMixin
 
 User = get_user_model()
 
 
 class Quiz(QuizMixin, models.Model):
+    """ """
+
     class QuizChoices(models.TextChoices):
+        """ """
         EASY = "easy", "easy"
         MEDIUM = "medium", "medium"
         HARD = "hard", "hard"
@@ -33,10 +37,7 @@ class Quiz(QuizMixin, models.Model):
 
     difficulty = models.CharField(max_length=6, choices=QuizChoices.choices)
     score_to_pass = models.IntegerField(
-        help_text=_(
-            "required score to pass the quiz",
-        )
-    )
+        help_text=_("required score to pass the quiz", ))
     delay1 = models.IntegerField()
     delay2 = models.IntegerField()
 
@@ -51,6 +52,7 @@ class Quiz(QuizMixin, models.Model):
     objects = QuizManager()
 
     class Meta:
+        """ """
         verbose_name_plural = _("quizes")
 
     def __str__(self):
@@ -58,6 +60,7 @@ class Quiz(QuizMixin, models.Model):
 
 
 class Review(models.Model):
+    """ """
     title = models.CharField(max_length=255)
     marks = models.IntegerField(default=0)
     right_answer = models.IntegerField(default=0)
@@ -77,6 +80,7 @@ class Review(models.Model):
 
 
 class Attempt(models.Model):
+    """ """
     slug = models.SlugField(default=uuid4(), unique=True)
 
     start = models.DateTimeField(auto_now=True)
@@ -98,10 +102,12 @@ class Attempt(models.Model):
 
 
 class Grade(models.Model):
+    """ """
     grade = models.DecimalField(max_digits=3, decimal_places=0)
 
 
 class QuizGrade(models.Model):
+    """ """
     quiz = models.ForeignKey(
         "Quiz",
         on_delete=models.CASCADE,
@@ -122,6 +128,7 @@ class QuizGrade(models.Model):
 
 
 class QuizQuestion(models.Model):
+    """ """
     quiz = models.ForeignKey(
         "Quiz",
         on_delete=models.CASCADE,

@@ -3,7 +3,6 @@ from django.db import models
 
 User = get_user_model()
 
-
 #####################
 #                   #
 #   Question Bank   #
@@ -12,7 +11,10 @@ User = get_user_model()
 
 
 class Question(models.Model):
+    """ """
+
     class QuestionChoices(models.TextChoices):
+        """ """
         # TODO: rework questions types
         MULTIPLE_CHOICE = "multiple-choice", "multiple-choice"
         TRUE_FALSE = "true-false", "true-false"
@@ -49,6 +51,7 @@ class Question(models.Model):
 
 
 class Category(models.Model):
+    """ """
     name = models.CharField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
     info = models.TextField(blank=True, null=True)
@@ -59,6 +62,7 @@ class Category(models.Model):
 
 
 class Answer(models.Model):
+    """ """
     text = models.TextField()
     correct = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
@@ -69,6 +73,7 @@ class Answer(models.Model):
 
 
 class Cagtegory(models.Model):
+    """ """
     name = models.CharField(max_length=255)
     info = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
@@ -76,6 +81,7 @@ class Cagtegory(models.Model):
 
 
 class QuestionAnswer(models.Model):
+    """ """
     fraction = models.DecimalField(max_digits=3, decimal_places=0)
 
     answer = models.TextField()
@@ -96,6 +102,7 @@ class QuestionAnswer(models.Model):
 
 
 class QuestionSession(models.Model):
+    """ """
     newest = models.IntegerField(default=0)
     new_graded = models.IntegerField(default=0)
     sum_penalty = models.DecimalField(max_digits=3, decimal_places=0)
@@ -116,6 +123,7 @@ class QuestionSession(models.Model):
 
 
 class State(models.Model):
+    """ """
     answer = models.TextField()
     seq_number = models.IntegerField(default=0)
 
@@ -137,4 +145,5 @@ class State(models.Model):
 
 
 class Attempt(models.Model):
+    """ """
     module_name = models.CharField(max_length=255)

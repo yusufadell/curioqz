@@ -1,10 +1,16 @@
 from django.contrib import admin
 
-from .models import Attempt, Grade, Quiz, QuizGrade, QuizQuestion, Review
+from .models import Attempt
+from .models import Grade
+from .models import Quiz
+from .models import QuizGrade
+from .models import QuizQuestion
+from .models import Review
 
 
 @admin.register(Quiz)
 class QuizAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "name",
@@ -42,14 +48,20 @@ class QuizAdmin(admin.ModelAdmin):
         "course",
         "review",
     )
-    search_fields = ("name",)
+    search_fields = ("name", )
 
     def get_queryset(self, request):
+        """
+
+        :param request:
+
+        """
         return super().get_queryset(request).select_related("course", "review")
 
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "title",
@@ -61,11 +73,12 @@ class ReviewAdmin(admin.ModelAdmin):
         "overall_feedback",
         "reviewer",
     )
-    list_filter = ("reviewer",)
+    list_filter = ("reviewer", )
 
 
 @admin.register(Attempt)
 class AttemptAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "slug",
@@ -77,21 +90,24 @@ class AttemptAdmin(admin.ModelAdmin):
         "user",
     )
     list_filter = ("start", "finish", "modified", "quiz", "user")
-    search_fields = ("slug",)
+    search_fields = ("slug", )
 
 
 @admin.register(Grade)
 class GradeAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "grade")
 
 
 @admin.register(QuizGrade)
 class QuizGradeAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "quiz", "user", "grade", "modified")
     list_filter = ("quiz", "user", "grade", "modified")
 
 
 @admin.register(QuizQuestion)
 class QuizQuestionAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "quiz", "questions")
     list_filter = ("quiz", "questions")

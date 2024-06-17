@@ -5,7 +5,15 @@ from curioqz.users.models import User
 
 
 class TestUserViewSet:
+    """ """
+
     def test_get_queryset(self, user: User, rf: RequestFactory):
+        """
+
+        :param user: User:
+        :param rf: RequestFactory:
+
+        """
         view = UserViewSet()
         request = rf.get("/fake-url/")
         request.user = user
@@ -15,6 +23,12 @@ class TestUserViewSet:
         assert user in view.get_queryset()
 
     def test_me(self, user: User, rf: RequestFactory):
+        """
+
+        :param user: User:
+        :param rf: RequestFactory:
+
+        """
         view = UserViewSet()
         request = rf.get("/fake-url/")
         request.user = user

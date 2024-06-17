@@ -1,19 +1,18 @@
 from django.contrib import admin
 
-from .models import (
-    Answer,
-    Attempt,
-    Cagtegory,
-    Category,
-    Question,
-    QuestionAnswer,
-    QuestionSession,
-    State,
-)
+from .models import Answer
+from .models import Attempt
+from .models import Cagtegory
+from .models import Category
+from .models import Question
+from .models import QuestionAnswer
+from .models import QuestionSession
+from .models import State
 
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "title",
@@ -29,41 +28,52 @@ class QuestionAdmin(admin.ModelAdmin):
         "category",
     )
     list_filter = ("created", "hidden", "created_by", "category")
-    filter_horizontal = ("answers",)
+    filter_horizontal = ("answers", )
 
     def get_queryset(self, request):
-        return super().get_queryset(request).select_related("category", "created_by")
+        """
+
+        :param request:
+
+        """
+        return super().get_queryset(request).select_related(
+            "category", "created_by")
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "name", "created", "info", "order")
-    list_filter = ("created",)
-    search_fields = ("name",)
+    list_filter = ("created", )
+    search_fields = ("name", )
 
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "text", "correct", "created", "feedback")
     list_filter = ("correct", "created")
-    search_fields = ("text",)
+    search_fields = ("text", )
 
 
 @admin.register(Cagtegory)
 class CagtegoryAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "name", "info", "created", "updated")
     list_filter = ("created", "updated")
-    search_fields = ("name",)
+    search_fields = ("name", )
 
 
 @admin.register(QuestionAnswer)
 class QuestionAnswerAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "fraction", "answer", "feedback", "question")
-    list_filter = ("question",)
+    list_filter = ("question", )
 
 
 @admin.register(QuestionSession)
 class QuestionSessionAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "newest",
@@ -79,6 +89,7 @@ class QuestionSessionAdmin(admin.ModelAdmin):
 
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "answer",
@@ -95,4 +106,5 @@ class StateAdmin(admin.ModelAdmin):
 
 @admin.register(Attempt)
 class AttemptAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "module_name")

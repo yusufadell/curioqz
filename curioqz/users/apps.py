@@ -3,10 +3,12 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UsersConfig(AppConfig):
+    """ """
     name = "curioqz.users"
     verbose_name = _("Users")
 
     def ready(self):
+        """ """
         try:
             import curioqz.users.signals  # noqa F401
         except ImportError:
