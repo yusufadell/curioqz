@@ -9,7 +9,7 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-working_dir="$(dirname ${0})"
+working_dir="$(dirname "${0}")"
 source "${working_dir}/_sourced/constants.sh"
 source "${working_dir}/_sourced/messages.sh"
 
@@ -20,10 +20,10 @@ export AWS_STORAGE_BUCKET_NAME="${DJANGO_AWS_STORAGE_BUCKET_NAME}"
 
 message_info "Upload the backups directory to S3 bucket {$AWS_STORAGE_BUCKET_NAME}"
 
-aws s3 cp ${BACKUP_DIR_PATH} s3://${AWS_STORAGE_BUCKET_NAME}${BACKUP_DIR_PATH} --recursive
+aws s3 cp "${BACKUP_DIR_PATH}" s3://"${AWS_STORAGE_BUCKET_NAME}""${BACKUP_DIR_PATH}" --recursive
 
 message_info "Cleaning the directory ${BACKUP_DIR_PATH}"
 
-rm -rf ${BACKUP_DIR_PATH}/*
+rm -rf "${BACKUP_DIR_PATH}"/*
 
 message_success "Finished uploading and cleaning."
