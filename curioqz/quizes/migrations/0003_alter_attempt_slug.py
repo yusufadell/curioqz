@@ -7,13 +7,15 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quizes', '0002_alter_quiz_options'),
+        ("quizes", "0002_alter_quiz_options"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='attempt',
-            name='slug',
-            field=models.SlugField(default=uuid.UUID('85cc53ea-1b08-4aad-a652-cb5df8178bb4'), unique=True),
+            model_name="attempt",
+            name="slug",
+            field=models.SlugField(
+                default=uuid.UUID("85cc53ea-1b08-4aad-a652-cb5df8178bb4"), unique=True
+            ),
         ),
     ]
