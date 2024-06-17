@@ -23,9 +23,9 @@ def test_merge(
 ):
     """
 
-    :param tmp_path: Path: 
-    :param input_contents: list[str]: 
-    :param expected_output: str: 
+    :param tmp_path: Path:
+    :param input_contents: list[str]:
+    :param expected_output: str:
 
     """
     output_file = tmp_path / ".env"

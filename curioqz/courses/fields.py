@@ -11,8 +11,8 @@ class OrderField(models.PositiveIntegerField):
     def pre_save(self, model_instance, add):
         """
 
-        :param model_instance: 
-        :param add: 
+        :param model_instance:
+        :param add:
 
         """
         if getattr(model_instance, self.attname) is None:

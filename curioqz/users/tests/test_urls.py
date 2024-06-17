@@ -7,7 +7,7 @@ from curioqz.users.models import User
 def test_detail(user: User):
     """
 
-    :param user: User: 
+    :param user: User:
 
     """
     assert (

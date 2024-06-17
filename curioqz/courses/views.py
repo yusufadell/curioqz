@@ -26,7 +26,7 @@ class SomeSecretView(views.LoginRequiredMixin, TemplateView):
     def get(self, request):
         """
 
-        :param request: 
+        :param request:
 
         """
         return self.render_to_response({})

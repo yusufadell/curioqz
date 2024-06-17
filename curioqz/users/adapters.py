@@ -11,7 +11,7 @@ class AccountAdapter(DefaultAccountAdapter):
     def is_open_for_signup(self, request: HttpRequest):
         """
 
-        :param request: HttpRequest: 
+        :param request: HttpRequest:
 
         """
         return getattr(settings, "ACCOUNT_ALLOW_REGISTRATION", True)
@@ -22,8 +22,8 @@ class SocialAccountAdapter(DefaultSocialAccountAdapter):
     def is_open_for_signup(self, request: HttpRequest, sociallogin: Any):
         """
 
-        :param request: HttpRequest: 
-        :param sociallogin: Any: 
+        :param request: HttpRequest:
+        :param sociallogin: Any:
 
         """
         return getattr(settings, "ACCOUNT_ALLOW_REGISTRATION", True)

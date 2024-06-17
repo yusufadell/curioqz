@@ -32,7 +32,7 @@ class TestUserUpdateView:
     def dummy_get_response(self, request: HttpRequest):
         """
 
-        :param request: HttpRequest: 
+        :param request: HttpRequest:
 
         """
         return None
@@ -40,8 +40,8 @@ class TestUserUpdateView:
     def test_get_success_url(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         view = UserUpdateView()
@@ -55,8 +55,8 @@ class TestUserUpdateView:
     def test_get_object(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         view = UserUpdateView()
@@ -70,8 +70,8 @@ class TestUserUpdateView:
     def test_form_valid(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         view = UserUpdateView()
@@ -99,8 +99,8 @@ class TestUserRedirectView:
     def test_get_redirect_url(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         view = UserRedirectView()
@@ -117,8 +117,8 @@ class TestUserDetailView:
     def test_authenticated(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         request = rf.get("/fake-url/")
@@ -131,8 +131,8 @@ class TestUserDetailView:
     def test_not_authenticated(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         request = rf.get("/fake-url/")

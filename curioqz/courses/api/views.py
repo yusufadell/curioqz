@@ -44,9 +44,9 @@ class CourseViewSet(
     def enroll(self, request, *args, **kwargs):
         """
 
-        :param request: 
-        :param *args: 
-        :param **kwargs: 
+        :param request:
+        :param *args:
+        :param **kwargs:
 
         """
         course = self.get_object()
@@ -63,9 +63,9 @@ class CourseViewSet(
     def contents(self, request, *args, **kwargs):
         """
 
-        :param request: 
-        :param *args: 
-        :param **kwargs: 
+        :param request:
+        :param *args:
+        :param **kwargs:
 
         """
         return self.retrieve(request, *args, **kwargs)

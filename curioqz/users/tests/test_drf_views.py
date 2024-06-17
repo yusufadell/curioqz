@@ -9,8 +9,8 @@ class TestUserViewSet:
     def test_get_queryset(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         view = UserViewSet()
@@ -24,8 +24,8 @@ class TestUserViewSet:
     def test_me(self, user: User, rf: RequestFactory):
         """
 
-        :param user: User: 
-        :param rf: RequestFactory: 
+        :param user: User:
+        :param rf: RequestFactory:
 
         """
         view = UserViewSet()

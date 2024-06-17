@@ -21,8 +21,8 @@ class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericV
     def get_queryset(self, *args, **kwargs):
         """
 
-        :param *args: 
-        :param **kwargs: 
+        :param *args:
+        :param **kwargs:
 
         """
         assert isinstance(self.request.user.id, int)
@@ -32,7 +32,7 @@ class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericV
     def me(self, request):
         """
 
-        :param request: 
+        :param request:
 
         """
         serializer = UserSerializer(request.user, context={"request": request})

@@ -16,7 +16,7 @@ class TestUserAdminCreationForm:
             2) Only 1 error is raised by the UserCreation Form
             3) The desired error message is raised
 
-        :param user: User: 
+        :param user: User:
 
         """
 

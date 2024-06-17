@@ -5,7 +5,7 @@ from django.urls import reverse
 def test_swagger_accessible_by_admin(admin_client):
     """
 
-    :param admin_client: 
+    :param admin_client:
 
     """
     url = reverse("api-docs")
@@ -17,7 +17,7 @@ def test_swagger_accessible_by_admin(admin_client):
 def test_swagger_ui_not_accessible_by_normal_user(client):
     """
 
-    :param client: 
+    :param client:
 
     """
     url = reverse("api-docs")
@@ -28,7 +28,7 @@ def test_swagger_ui_not_accessible_by_normal_user(client):
 def test_api_schema_generated_successfully(admin_client):
     """
 
-    :param admin_client: 
+    :param admin_client:
 
     """
     url = reverse("api-schema")

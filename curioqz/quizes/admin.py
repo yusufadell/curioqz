@@ -53,7 +53,7 @@ class QuizAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         """
 
-        :param request: 
+        :param request:
 
         """
         return super().get_queryset(request).select_related("course", "review")

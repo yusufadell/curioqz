@@ -8,7 +8,7 @@ class TestUserAdmin:
     def test_changelist(self, admin_client):
         """
 
-        :param admin_client: 
+        :param admin_client:
 
         """
         url = reverse("admin:users_user_changelist")
@@ -18,7 +18,7 @@ class TestUserAdmin:
     def test_search(self, admin_client):
         """
 
-        :param admin_client: 
+        :param admin_client:
 
         """
         url = reverse("admin:users_user_changelist")
@@ -28,7 +28,7 @@ class TestUserAdmin:
     def test_add(self, admin_client):
         """
 
-        :param admin_client: 
+        :param admin_client:
 
         """
         url = reverse("admin:users_user_add")
@@ -49,7 +49,7 @@ class TestUserAdmin:
     def test_view_user(self, admin_client):
         """
 
-        :param admin_client: 
+        :param admin_client:
 
         """
         user = User.objects.get(username="admin")

@@ -8,8 +8,8 @@ from curioqz.users.tests.factories import UserFactory
 def media_storage(settings, tmpdir):
     """
 
-    :param settings: 
-    :param tmpdir: 
+    :param settings:
+    :param tmpdir:
 
     """
     settings.MEDIA_ROOT = tmpdir.strpath
@@ -19,7 +19,7 @@ def media_storage(settings, tmpdir):
 def user(db) -> User:
     """
 
-    :param db: 
+    :param db:
 
     """
     return UserFactory()

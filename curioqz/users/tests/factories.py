@@ -17,9 +17,9 @@ class UserFactory(DjangoModelFactory):
     def password(self, create: bool, extracted: Sequence[Any], **kwargs):
         """
 
-        :param create: bool: 
-        :param extracted: Sequence[Any]: 
-        :param **kwargs: 
+        :param create: bool:
+        :param extracted: Sequence[Any]:
+        :param **kwargs:
 
         """
         password = (

@@ -17,8 +17,8 @@ def merge(
 ) -> None:
     """
 
-    :param output_file: Path: 
-    :param files_to_merge: Sequence[Path]: 
+    :param output_file: Path:
+    :param files_to_merge: Sequence[Path]:
 
     """
     merged_content = ""

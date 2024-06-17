@@ -29,9 +29,9 @@ class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     def create(self, request, *args, **kwargs):
         """
 
-        :param request: 
-        :param *args: 
-        :param **kwargs: 
+        :param request:
+        :param *args:
+        :param **kwargs:
 
         """
         print(self)
@@ -49,9 +49,9 @@ class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         you don't need to manually add it in.
         previosly it was: self.context['request'].user
 
-        :param request: 
-        :param *args: 
-        :param **kwargs: 
+        :param request:
+        :param *args:
+        :param **kwargs:
 
         """
         from pprint import pprint

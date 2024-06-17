@@ -46,7 +46,7 @@ class ItemRelatedField(serializers.RelatedField):
     def to_representation(self, value):
         """
 
-        :param value: 
+        :param value:
 
         """
         return value.render()
