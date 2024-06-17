@@ -18,7 +18,8 @@ urlpatterns = [
     path("users/", include("curioqz.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path("quizes/", include("curioqz.quizes.urls", namespace="quizes")),
+    path("api/", include("curioqz.quizes.urls", namespace="quizes")),
+    path("silk/", include("silk.urls", namespace="silk")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
