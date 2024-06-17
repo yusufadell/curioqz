@@ -12,7 +12,8 @@ else:
     router = SimpleRouter()
 
 router.register("quizes", QuizViewSet)
-router.register("quiz-grades", QuizGradeViewSet)  # make as detailed endpoint for grades
+router.register("quiz-grades",
+                QuizGradeViewSet)  # make as detailed endpoint for grades
 router.register("quiz-questions", QuizQuestionViewSet)
 
 app_name = "quizes"

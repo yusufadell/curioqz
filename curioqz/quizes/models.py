@@ -13,6 +13,7 @@ User = get_user_model()
 
 class Quiz(QuizMixin, models.Model):
     """ """
+
     class QuizChoices(models.TextChoices):
         """ """
         EASY = "easy", "easy"
@@ -36,10 +37,7 @@ class Quiz(QuizMixin, models.Model):
 
     difficulty = models.CharField(max_length=6, choices=QuizChoices.choices)
     score_to_pass = models.IntegerField(
-        help_text=_(
-            "required score to pass the quiz",
-        )
-    )
+        help_text=_("required score to pass the quiz", ))
     delay1 = models.IntegerField()
     delay2 = models.IntegerField()
 

@@ -8,6 +8,7 @@ from django.http import HttpRequest
 
 class AccountAdapter(DefaultAccountAdapter):
     """ """
+
     def is_open_for_signup(self, request: HttpRequest):
         """
 
@@ -19,6 +20,7 @@ class AccountAdapter(DefaultAccountAdapter):
 
 class SocialAccountAdapter(DefaultSocialAccountAdapter):
     """ """
+
     def is_open_for_signup(self, request: HttpRequest, sociallogin: Any):
         """
 

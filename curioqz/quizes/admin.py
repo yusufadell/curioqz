@@ -48,7 +48,7 @@ class QuizAdmin(admin.ModelAdmin):
         "course",
         "review",
     )
-    search_fields = ("name",)
+    search_fields = ("name", )
 
     def get_queryset(self, request):
         """
@@ -73,7 +73,7 @@ class ReviewAdmin(admin.ModelAdmin):
         "overall_feedback",
         "reviewer",
     )
-    list_filter = ("reviewer",)
+    list_filter = ("reviewer", )
 
 
 @admin.register(Attempt)
@@ -90,7 +90,7 @@ class AttemptAdmin(admin.ModelAdmin):
         "user",
     )
     list_filter = ("start", "finish", "modified", "quiz", "user")
-    search_fields = ("slug",)
+    search_fields = ("slug", )
 
 
 @admin.register(Grade)

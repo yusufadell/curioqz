@@ -6,6 +6,7 @@ from curioqz.users.models import User
 
 class TestUserViewSet:
     """ """
+
     def test_get_queryset(self, user: User, rf: RequestFactory):
         """
 

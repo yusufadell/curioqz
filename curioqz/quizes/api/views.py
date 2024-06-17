@@ -19,11 +19,9 @@ from curioqz.quizes.models import Review
 @pysnooper.snoop()
 class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """ """
-    queryset = (
-        Quiz.objects.select_related("course", "course__owner", "review")
-        .prefetch_related("course__modules")
-        .all()
-    )
+    queryset = (Quiz.objects.select_related(
+        "course", "course__owner",
+        "review").prefetch_related("course__modules").all())
     serializer_class = QuizSerializer
 
     def create(self, request, *args, **kwargs):
@@ -84,9 +82,6 @@ class QuizGradeViewSet(viewsets.ModelViewSet):
 
 class QuizQuestionViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """ """
-    queryset = (
-        QuizQuestion.objects.select_related("quiz")
-        .prefetch_related("quiz__course__modules")
-        .all()
-    )
+    queryset = (QuizQuestion.objects.select_related("quiz").prefetch_related(
+        "quiz__course__modules").all())
     serializer_class = QuizQuestionSerializer

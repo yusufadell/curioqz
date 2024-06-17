@@ -32,9 +32,8 @@ class SomeSecretView(views.LoginRequiredMixin, TemplateView):
         return self.render_to_response({})
 
 
-class SomeProtectedView(
-    views.LoginRequiredMixin, views.PermissionRequiredMixin, TemplateView
-):
+class SomeProtectedView(views.LoginRequiredMixin,
+                        views.PermissionRequiredMixin, TemplateView):
     """ """
     permission_required = "auth.change_user"
     template_name = "path/to/template.html"

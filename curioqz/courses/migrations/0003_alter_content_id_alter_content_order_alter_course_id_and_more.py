@@ -15,9 +15,10 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="content",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="content",
@@ -27,30 +28,34 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="course",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="file",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="image",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="module",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="module",
@@ -60,22 +65,25 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="subject",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="text",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
         migrations.AlterField(
             model_name="video",
             name="id",
-            field=models.BigAutoField(
-                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
-            ),
+            field=models.BigAutoField(auto_created=True,
+                                      primary_key=True,
+                                      serialize=False,
+                                      verbose_name="ID"),
         ),
     ]

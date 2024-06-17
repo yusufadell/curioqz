@@ -28,7 +28,7 @@ class QuestionAdmin(admin.ModelAdmin):
         "category",
     )
     list_filter = ("created", "hidden", "created_by", "category")
-    filter_horizontal = ("answers",)
+    filter_horizontal = ("answers", )
 
     def get_queryset(self, request):
         """
@@ -36,15 +36,16 @@ class QuestionAdmin(admin.ModelAdmin):
         :param request:
 
         """
-        return super().get_queryset(request).select_related("category", "created_by")
+        return super().get_queryset(request).select_related(
+            "category", "created_by")
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """ """
     list_display = ("id", "name", "created", "info", "order")
-    list_filter = ("created",)
-    search_fields = ("name",)
+    list_filter = ("created", )
+    search_fields = ("name", )
 
 
 @admin.register(Answer)
@@ -52,7 +53,7 @@ class AnswerAdmin(admin.ModelAdmin):
     """ """
     list_display = ("id", "text", "correct", "created", "feedback")
     list_filter = ("correct", "created")
-    search_fields = ("text",)
+    search_fields = ("text", )
 
 
 @admin.register(Cagtegory)
@@ -60,14 +61,14 @@ class CagtegoryAdmin(admin.ModelAdmin):
     """ """
     list_display = ("id", "name", "info", "created", "updated")
     list_filter = ("created", "updated")
-    search_fields = ("name",)
+    search_fields = ("name", )
 
 
 @admin.register(QuestionAnswer)
 class QuestionAnswerAdmin(admin.ModelAdmin):
     """ """
     list_display = ("id", "fraction", "answer", "feedback", "question")
-    list_filter = ("question",)
+    list_filter = ("question", )
 
 
 @admin.register(QuestionSession)

@@ -3,7 +3,6 @@ from django.db import models
 
 User = get_user_model()
 
-
 #####################
 #                   #
 #   Question Bank   #
@@ -13,6 +12,7 @@ User = get_user_model()
 
 class Question(models.Model):
     """ """
+
     class QuestionChoices(models.TextChoices):
         """ """
         # TODO: rework questions types

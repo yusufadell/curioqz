@@ -38,12 +38,11 @@ class QuizGradeSerializer(serializers.Serializer):
 
 class QuizQuestionSerializer(serializers.ModelSerializer):
     """ """
-    quiz_obj = QuizSerializer(
-        source="quiz", read_only=True
-    )  # TODO: use drf writalbe nested
+    quiz_obj = QuizSerializer(source="quiz",
+                              read_only=True)  # TODO: use drf writalbe nested
     question_obj = QuestionSerializer(
-        source="question", read_only=True
-    )  # TODO: consider using django-auto-prefetching pkg
+        source="question",
+        read_only=True)  # TODO: consider using django-auto-prefetching pkg
 
     class Meta:
         """ """
@@ -51,10 +50,13 @@ class QuizQuestionSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ReviewSerializer: ...
+class ReviewSerializer:
+    ...
 
 
-class AttemptSerializer: ...
+class AttemptSerializer:
+    ...
 
 
-class GradeSerializer: ...
+class GradeSerializer:
+    ...

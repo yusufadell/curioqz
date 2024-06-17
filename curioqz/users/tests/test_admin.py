@@ -5,6 +5,7 @@ from curioqz.users.models import User
 
 class TestUserAdmin:
     """ """
+
     def test_changelist(self, admin_client):
         """
 

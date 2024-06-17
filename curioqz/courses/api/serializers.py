@@ -8,6 +8,7 @@ from ..models import Subject
 
 class SubjectSerializer(serializers.ModelSerializer):
     """ """
+
     class Meta:
         """ """
         model = Subject
@@ -16,6 +17,7 @@ class SubjectSerializer(serializers.ModelSerializer):
 
 class ModuleSerializer(serializers.ModelSerializer):
     """ """
+
     class Meta:
         """ """
         model = Module
@@ -43,6 +45,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
 class ItemRelatedField(serializers.RelatedField):
     """ """
+
     def to_representation(self, value):
         """
 

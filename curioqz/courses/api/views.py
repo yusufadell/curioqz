@@ -15,10 +15,10 @@ from .serializers import SubjectSerializer
 
 
 class SubjectViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    viewsets.GenericViewSet,
+        mixins.CreateModelMixin,
+        mixins.ListModelMixin,
+        mixins.RetrieveModelMixin,
+        viewsets.GenericViewSet,
 ):
     """ """
     queryset = Subject.objects.all()
@@ -26,10 +26,10 @@ class SubjectViewSet(
 
 
 class CourseViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    viewsets.GenericViewSet,
+        mixins.CreateModelMixin,
+        mixins.ListModelMixin,
+        mixins.RetrieveModelMixin,
+        viewsets.GenericViewSet,
 ):
     """ """
     queryset = Course.objects.prefetch_related("modules__contents")

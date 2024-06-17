@@ -66,7 +66,9 @@ class Migration(migrations.Migration):
                 ("text", models.CharField(max_length=255)),
                 (
                     "image",
-                    models.ImageField(blank=True, null=True, upload_to="images/"),
+                    models.ImageField(blank=True,
+                                      null=True,
+                                      upload_to="images/"),
                 ),
                 (
                     "type",

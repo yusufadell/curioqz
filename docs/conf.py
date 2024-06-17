@@ -28,7 +28,6 @@ project = "curioqz"
 copyright = """2023, IMperiuM"""
 author = "IMperiuM"
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be

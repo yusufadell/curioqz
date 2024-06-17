@@ -96,6 +96,7 @@ class TestUserUpdateView:
 
 class TestUserRedirectView:
     """ """
+
     def test_get_redirect_url(self, user: User, rf: RequestFactory):
         """
 
@@ -114,6 +115,7 @@ class TestUserRedirectView:
 
 class TestUserDetailView:
     """ """
+
     def test_authenticated(self, user: User, rf: RequestFactory):
         """
 

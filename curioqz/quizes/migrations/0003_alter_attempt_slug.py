@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             model_name="attempt",
             name="slug",
             field=models.SlugField(
-                default=uuid.UUID("85cc53ea-1b08-4aad-a652-cb5df8178bb4"), unique=True
-            ),
+                default=uuid.UUID("85cc53ea-1b08-4aad-a652-cb5df8178bb4"),
+                unique=True),
         ),
     ]
