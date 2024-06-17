@@ -4,8 +4,10 @@ from django.db import models
 
 
 class Faculty(models.Model):
+    """ """
     pass
 
 
 class University(models.Model):
+    """ """
     pass

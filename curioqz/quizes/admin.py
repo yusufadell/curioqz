@@ -5,6 +5,7 @@ from .models import Attempt, Grade, Quiz, QuizGrade, QuizQuestion, Review
 
 @admin.register(Quiz)
 class QuizAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "name",
@@ -45,11 +46,17 @@ class QuizAdmin(admin.ModelAdmin):
     search_fields = ("name",)
 
     def get_queryset(self, request):
+        """
+
+        :param request: 
+
+        """
         return super().get_queryset(request).select_related("course", "review")
 
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "title",
@@ -66,6 +73,7 @@ class ReviewAdmin(admin.ModelAdmin):
 
 @admin.register(Attempt)
 class AttemptAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "slug",
@@ -82,16 +90,19 @@ class AttemptAdmin(admin.ModelAdmin):
 
 @admin.register(Grade)
 class GradeAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "grade")
 
 
 @admin.register(QuizGrade)
 class QuizGradeAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "quiz", "user", "grade", "modified")
     list_filter = ("quiz", "user", "grade", "modified")
 
 
 @admin.register(QuizQuestion)
 class QuizQuestionAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "quiz", "questions")
     list_filter = ("quiz", "questions")

@@ -10,10 +10,12 @@ User = get_user_model()
 
 
 class Subject(models.Model):
+    """ """
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
 
     class Meta:
+        """ """
         ordering = ["title"]
 
     def __str__(self):
@@ -21,6 +23,7 @@ class Subject(models.Model):
 
 
 class Course(models.Model):
+    """ """
     owner = models.ForeignKey(
         User, related_name="courses_created", on_delete=models.CASCADE
     )
@@ -34,6 +37,7 @@ class Course(models.Model):
     students = models.ManyToManyField(User, related_name="courses_joined", blank=True)
 
     class Meta:
+        """ """
         ordering = ["-created"]
 
     def __str__(self):
@@ -41,6 +45,7 @@ class Course(models.Model):
 
 
 class Module(models.Model):
+    """ """
     course = models.ForeignKey(Course, related_name="modules", on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
@@ -50,10 +55,12 @@ class Module(models.Model):
         return f"{self.order}. {self.title}"
 
     class Meta:
+        """ """
         ordering = ["order"]
 
 
 class Content(models.Model):
+    """ """
     module = models.ForeignKey(
         Module, related_name="contents", on_delete=models.CASCADE
     )
@@ -67,10 +74,12 @@ class Content(models.Model):
     order = OrderField(blank=True, for_fields=["module"])
 
     class Meta:
+        """ """
         ordering = ["order"]
 
 
 class ItemBase(models.Model):
+    """ """
     owner = models.ForeignKey(
         User, related_name="%(class)s_related", on_delete=models.CASCADE
     )
@@ -79,28 +88,34 @@ class ItemBase(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
+        """ """
         abstract = True
 
     def __str__(self):
         return self.title
 
     def render(self):
+        """ """
         return render_to_string(
             f"courses/content/{self._meta.model_name}.html", {"item": self}
         )
 
 
 class Text(ItemBase):
+    """ """
     content = models.TextField()
 
 
 class File(ItemBase):
+    """ """
     file = models.FileField(upload_to="files")
 
 
 class Image(ItemBase):
+    """ """
     file = models.FileField(upload_to="images")
 
 
 class Video(ItemBase):
+    """ """
     url = models.URLField()

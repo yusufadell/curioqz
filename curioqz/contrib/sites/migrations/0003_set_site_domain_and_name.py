@@ -9,7 +9,14 @@ from django.db import migrations
 
 
 def _update_or_create_site_with_sequence(site_model, connection, domain, name):
-    """Update or create the site with default ID and keep the DB sequence in sync."""
+    """Update or create the site with default ID and keep the DB sequence in sync.
+
+    :param site_model: 
+    :param connection: 
+    :param domain: 
+    :param name: 
+
+    """
     site, created = site_model.objects.update_or_create(
         id=settings.SITE_ID,
         defaults={
@@ -36,7 +43,12 @@ def _update_or_create_site_with_sequence(site_model, connection, domain, name):
 
 
 def update_site_forward(apps, schema_editor):
-    """Set site domain and name."""
+    """Set site domain and name.
+
+    :param apps: 
+    :param schema_editor: 
+
+    """
     Site = apps.get_model("sites", "Site")
     _update_or_create_site_with_sequence(
         Site,
@@ -47,7 +59,12 @@ def update_site_forward(apps, schema_editor):
 
 
 def update_site_backward(apps, schema_editor):
-    """Revert site domain and name to default."""
+    """Revert site domain and name to default.
+
+    :param apps: 
+    :param schema_editor: 
+
+    """
     Site = apps.get_model("sites", "Site")
     _update_or_create_site_with_sequence(
         Site,
@@ -58,6 +75,7 @@ def update_site_backward(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
+    """ """
     dependencies = [("sites", "0002_alter_domain_unique")]
 
     operations = [migrations.RunPython(update_site_forward, update_site_backward)]

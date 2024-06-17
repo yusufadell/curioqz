@@ -13,6 +13,7 @@ from curioqz.quizes.models import Attempt, Grade, Quiz, QuizGrade, QuizQuestion,
 
 @pysnooper.snoop()
 class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """ """
     queryset = (
         Quiz.objects.select_related("course", "course__owner", "review")
         .prefetch_related("course__modules")
@@ -21,6 +22,13 @@ class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     serializer_class = QuizSerializer
 
     def create(self, request, *args, **kwargs):
+        """
+
+        :param request: 
+        :param *args: 
+        :param **kwargs: 
+
+        """
         print(self)
         print(vars(self))
         return Response("Hello")
@@ -32,10 +40,14 @@ class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         name="Fuck",
     )
     def yusuf_was_here(self, request, *args, **kwargs):
-        """
-        The latest DRF includes self.request in the default context sent to serializers;
+        """The latest DRF includes self.request in the default context sent to serializers;
         you don't need to manually add it in.
         previosly it was: self.context['request'].user
+
+        :param request: 
+        :param *args: 
+        :param **kwargs: 
+
         """
         from pprint import pprint
 
@@ -60,11 +72,13 @@ class QuizViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
 
 
 class QuizGradeViewSet(viewsets.ModelViewSet):
+    """ """
     queryset = QuizGrade.objects.all()
     serializer_class = QuizGradeSerializer
 
 
 class QuizQuestionViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """ """
     queryset = (
         QuizQuestion.objects.select_related("quiz")
         .prefetch_related("quiz__course__modules")

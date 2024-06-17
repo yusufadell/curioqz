@@ -6,6 +6,7 @@ import curioqz.courses.fields
 
 
 class Migration(migrations.Migration):
+    """ """
     dependencies = [
         ("courses", "0002_delete_address"),
     ]

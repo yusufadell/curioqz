@@ -14,6 +14,7 @@ from .models import (
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "title",
@@ -32,11 +33,17 @@ class QuestionAdmin(admin.ModelAdmin):
     filter_horizontal = ("answers",)
 
     def get_queryset(self, request):
+        """
+
+        :param request: 
+
+        """
         return super().get_queryset(request).select_related("category", "created_by")
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "name", "created", "info", "order")
     list_filter = ("created",)
     search_fields = ("name",)
@@ -44,6 +51,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "text", "correct", "created", "feedback")
     list_filter = ("correct", "created")
     search_fields = ("text",)
@@ -51,6 +59,7 @@ class AnswerAdmin(admin.ModelAdmin):
 
 @admin.register(Cagtegory)
 class CagtegoryAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "name", "info", "created", "updated")
     list_filter = ("created", "updated")
     search_fields = ("name",)
@@ -58,12 +67,14 @@ class CagtegoryAdmin(admin.ModelAdmin):
 
 @admin.register(QuestionAnswer)
 class QuestionAnswerAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "fraction", "answer", "feedback", "question")
     list_filter = ("question",)
 
 
 @admin.register(QuestionSession)
 class QuestionSessionAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "newest",
@@ -79,6 +90,7 @@ class QuestionSessionAdmin(admin.ModelAdmin):
 
 @admin.register(State)
 class StateAdmin(admin.ModelAdmin):
+    """ """
     list_display = (
         "id",
         "answer",
@@ -95,4 +107,5 @@ class StateAdmin(admin.ModelAdmin):
 
 @admin.register(Attempt)
 class AttemptAdmin(admin.ModelAdmin):
+    """ """
     list_display = ("id", "module_name")
